@@ -33,5 +33,5 @@ consume$Date_Time<-ymd_hms(consume$Date_Time)
 png("plot2.png",width = 480, height = 480, units = "px")
 plot(consume$Global_active_power~consume$Date_Time,col="white", 
      xlab="",ylab=c("Global active power [kilowatts]"))
-lines(consume$Global_active_power~consume_sub$Date_Time)
+lines(consume$Global_active_power~consume$Date_Time)
 dev.off()
