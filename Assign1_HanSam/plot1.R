@@ -28,7 +28,7 @@ head(consume)
 
 #Adding a new column Date_Time that combines Date and Time
 consume$Time<-format(consume$Time, format="%H:%M:%S")
-consume$Date_Time<-paste(consume$Date,consume_sub$Time,sep=" ")
+consume$Date_Time<-paste(consume$Date,consume$Time,sep=" ")
 consume$Date_Time<-ymd_hms(consume$Date_Time)
 
 
