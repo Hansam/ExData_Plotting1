@@ -23,12 +23,13 @@ head(consume)
 
 #Adding a new column Date_Time that combines Date and Time
 consume$Time<-format(consume$Time, format="%H:%M:%S")
-consume$Date_Time<-paste(consume$Date,consume_sub$Time,sep=" ")
+consume$Date_Time<-paste(consume$Date,consume$Time,sep=" ")
 consume$Date_Time<-ymd_hms(consume$Date_Time)
 
 #Plot4--------------------------------------------------------------------------
 png("plot4.png",width = 480, height = 480, units = "px")
 par(mfrow=c(2,2))
+
 #1
 plot(consume$Global_active_power~consume$Date_Time,type="n", 
      xlab="",ylab=c("Global active power [kilowatts]"))
